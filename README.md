@@ -1,2 +1,2 @@
 # GameOfChance
-##Old school dice game call craps and cards games. 
+##Old school dice game and cards games. 
