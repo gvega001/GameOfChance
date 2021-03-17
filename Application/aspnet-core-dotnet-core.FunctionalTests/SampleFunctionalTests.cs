@@ -44,7 +44,7 @@ namespace SampleWebApplication.FunctionalTests
                 try
                 {
                     driver.Navigate().GoToUrl(webAppUrl);
-                    Assert.AreEqual("Home Page - ASP.NET Core", driver.Title, "Expected title to be 'Home Page - ASP.NET Core'");
+                    Assert.AreEqual("Home Page - Game of Chance", driver.Title, "Expected title to be 'Home Page - Game of Chance'");
                     break;
                 }
                 catch(Exception e)
