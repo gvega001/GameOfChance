@@ -16,22 +16,23 @@ namespace aspnet_core_dotnet_core.Pages
         {
             _logger = logger;
         }
-        [BindProperty]
-        public CrapsGame CrapGames { get; set; }
+
+        public CrapsGame CrapGames = new CrapsGame { DiceRoll1 = 0, DiceRoll2 = 0, GameStatus = CrapsGame.Status.Continue };
         public int  MyPoint { get; set; }
         public int SumOfDice { get; set; }
         public CrapsGame.Status GameStatus { get; set; }
         public CrapsGame.DiceName DiceNames { get; set; }
         public void OnGet()
         {
-            //gameStatus can contain Contine, Won, or Lost
-            GameStatus = CrapsGame.Status.Continue;
-
+           
             MyPoint = 0; // point if no win or loss on first roll
             //to determine the dice names
 
-            //first dice roll
-            SumOfDice = CrapGames.RollDice();
+            
+            if (SumOfDice ==0)
+            {
+                Console.WriteLine("Still first roll");
+            }
 
             //determine game status and point based on first roll
             switch ((CrapsGame.DiceName)SumOfDice)

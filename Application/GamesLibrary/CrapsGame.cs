@@ -12,16 +12,17 @@ namespace GamesLibrary
         public int SumOfDice { get; set; }
         public CrapsGame()
         {
+
         }
 
-        public CrapsGame(Random randomNumbers, Enum dice, Enum gameStatus, int diceRoll1, int diceRoll2, int sumOfDice)
+        public CrapsGame(Random randomNumbers, Enum dice, Enum gameStatus, int diceRoll1, int diceRoll2)
         {
             RandomNumbers = randomNumbers;
             Dice = dice;
             GameStatus = gameStatus;
             DiceRoll1 = diceRoll1;
             DiceRoll2 = diceRoll2;
-            SumOfDice = diceRoll1+diceRoll2;
+            SumOfDice = RollDice();
         }
      
         
@@ -40,6 +41,10 @@ namespace GamesLibrary
             BoxCars = 12
         }
 
+        public int GetSumOfDice()
+        {
+           return SumOfDice = RollDice();
+        }
         public int RollDice()
         {
             //pick the random two die values
@@ -47,10 +52,10 @@ namespace GamesLibrary
             DiceRoll2 = _randomNumbers.Next(1, 7); // second die roll
 
             //sum of the die values
-            SumOfDice = DiceRoll1 + DiceRoll2;
+            int sum = DiceRoll1 + DiceRoll2;
 
             //return the results of this roll
-            return SumOfDice;
+            return sum;
         }
 
     }
