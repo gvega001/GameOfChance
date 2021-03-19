@@ -17,9 +17,9 @@ namespace aspnet_core_dotnet_core.Pages
             _logger = logger;
         }
 
-        public CrapsGame CrapGames = new CrapsGame { DiceRoll1 = 0, DiceRoll2 = 0, GameStatus = CrapsGame.Status.Continue };
-        public int  MyPoint { get; set; }
-        public int SumOfDice { get; set; }
+        private CrapsGame CrapGames = new CrapsGame { DiceRoll1 = 0, DiceRoll2 = 0, GameStatus = CrapsGame.Status.Continue };
+        private int  MyPoint { get; set; }
+        private int SumOfDice { get; set; }
         public CrapsGame.Status GameStatus { get; set; }
         public CrapsGame.DiceName DiceNames { get; set; }
         public void OnGet()

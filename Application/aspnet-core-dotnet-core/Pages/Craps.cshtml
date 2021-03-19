@@ -1,7 +1,31 @@
 ﻿@page
+@using GamesLibrary
 @model aspnet_core_dotnet_core.Pages.crapsModel
 @{
     ViewData["Title"] = "Craps - Game of Chance";
 }
 
-@Model.CrapGames.GameStatus
+@{
+    if (Model.GameStatus == CrapsGame.Status.Continue)
+    {
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="..." class="rounded mr-2" alt="...">
+                <strong class="mr-auto">Craps</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                Roll Die To Play!
+            </div>
+        </div>
+    }
+}
+<div class="container">
+    <div>
+        <img class="img-thumbnail" src="~/images/Dice3.jpeg" />
+        <img class="img-thumbnail" src="~/images/Dice3.jpeg" />
+    </div>
+</div>
+<button type="button" class="btn btn-dark">Roll Dice!</button>
